@@ -47,7 +47,7 @@ module JsonApiClient
 
     # make an api request to fetch the missing data
     def fetch_data(klass, type, missing_ids)
-      path = URI(link_definition.url_for(type, missing_ids)).path
+      path = URI(link_definition.url_for(type, missing_ids))
 
       query = Query::Linked.new(path)
       results = klass.run_request(query)
